@@ -1,0 +1,20 @@
+[
+    {
+        "UpdateStageName": "PST Download (latest release)",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSourceArch": "x86_64",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"cd {{$FullBaseDir}} && URL=$(curl -s https://api.github.com/repos/zaigie/palworld-server-tool/releases/latest | grep -oE 'https://github.com/zaigie/palworld-server-tool/releases/download/[^[:space:]]*linux_x86_64.tar.gz' | head -1) && curl -sL -o pst.tar.gz $URL && tar -xzf pst.tar.gz && chmod +x pst sav_cli && rm -f pst.tar.gz\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "PST Download (latest release)",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSourceArch": "aarch64",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"cd {{$FullBaseDir}} && URL=$(curl -s https://api.github.com/repos/zaigie/palworld-server-tool/releases/latest | grep -oE 'https://github.com/zaigie/palworld-server-tool/releases/download/[^[:space:]]*linux_aarch64.tar.gz' | head -1) && curl -sL -o pst.tar.gz $URL && tar -xzf pst.tar.gz && chmod +x pst sav_cli && rm -f pst.tar.gz\"",
+        "SkipOnFailure": false
+    }
+]

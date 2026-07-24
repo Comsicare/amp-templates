@@ -1,0 +1,8 @@
+secret-scan:
+  stage: test
+  image: zricethezav/gitleaks:latest
+  tags: [docker]
+  script:
+    - gitleaks detect --source . --no-git -v
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push"'
