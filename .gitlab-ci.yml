@@ -1,6 +1,8 @@
 secret-scan:
   stage: test
-  image: zricethezav/gitleaks:latest
+  image:
+    name: zricethezav/gitleaks:latest
+    entrypoint: [""]
   tags: [docker]
   script:
     - gitleaks detect --source . --no-git -v
