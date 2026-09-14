@@ -1,0 +1,10 @@
+[
+    {
+        "UpdateStageName": "Write tokens.py",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"cd Gatekeeper && cat > tokens.py <<'PYEOF'\ntoken = '{{discord_token}}'\nAMPAuth = '{{amp_2fa}}'\nAMPUser = '{{amp_user}}'\nAMPPassword = '{{amp_password}}'\nAMPurl = '{{amp_url}}'\nPYEOF\n\"",
+        "SkipOnFailure": false
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "UpdateStageName": "Gatekeeper Source Download",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"export GIT_TERMINAL_PROMPT=0; cd Gatekeeper; DownloadSource=\\\"{{DownloadSource}}\\\"; DownloadBranch=\\\"{{DownloadBranch}}\\\"; [[ -z \\\"$DownloadBranch\\\" ]] && DownloadBranch=main; if [[ -n \\\"{{DownloadUsername}}\\\" ]]; then DownloadUrl=\\\"${DownloadSource/https:\\/\\//https:\\/\\/{{DownloadUsername}}:{{DownloadPassword}}@}\\\"; else DownloadUrl=\\\"$DownloadSource\\\"; fi; if [ ! -d .git ]; then echo \\\"Installing Gatekeeper\\\" && git clone \\\"$DownloadUrl\\\" tmp_src && cp -r tmp_src/. . && rm -rf tmp_src && git checkout \\\"$DownloadBranch\\\" --force && git pull && echo \\\"Gatekeeper installed\\\"; else echo \\\"Updating Gatekeeper\\\" && git remote set-url origin \\\"$DownloadUrl\\\" && git fetch origin && git checkout \\\"$DownloadBranch\\\" --force && git pull && echo \\\"Gatekeeper updated\\\"; fi\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Python Dependencies",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"cd Gatekeeper && python3 -m pip install --upgrade pip >/dev/null && python3 -m pip install -r requirements.txt\"",
+        "SkipOnFailure": false
+    }
+]
