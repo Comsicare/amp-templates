@@ -12,7 +12,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cd Gatekeeper && python3 -m pip install --upgrade pip >/dev/null && python3 -m pip install -r requirements.txt\"",
+        "UpdateSourceArgs": "-c \"cd Gatekeeper && rm -rf pydeps && mkdir -p pydeps && curl -sSL https://bootstrap.pypa.io/get-pip.py -o get-pip.py && PYTHONPATH=pydeps python3 get-pip.py --target=pydeps --no-warn-script-location >/dev/null && PYTHONPATH=pydeps python3 -m pip install --target=pydeps --no-warn-script-location -r requirements.txt && rm -f get-pip.py\"",
         "SkipOnFailure": false
     }
 ]
