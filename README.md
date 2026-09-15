@@ -7,6 +7,7 @@ Custom [AMP](https://cubecoders.com/amp) (CubeCoders Application Management Pane
 | Template | App | Notes |
 |---|---|---|
 | `pst.kvp` | [zaigie/palworld-server-tool](https://github.com/zaigie/palworld-server-tool) | Palworld server admin dashboard. Linux x86_64/aarch64. Requires an existing Palworld dedicated server with RCON + REST API enabled. |
+| `gkbot.kvp` | [k8thekat/GatekeeperV2](https://github.com/k8thekat/GatekeeperV2) (fork) | Discord bot for AMP instance control. Requires a Discord bot token and an AMP user with Super Admins role. |
 
 ## Usage
 

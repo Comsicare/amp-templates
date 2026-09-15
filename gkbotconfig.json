@@ -87,15 +87,18 @@
         "DisplayName": "Bot Source Branch",
         "Category": "Gatekeeper:source",
         "Subcategory": "Source:code:3",
-        "Description": "Branch to check out from the source repository.",
-        "Keywords": "git,branch,source",
+        "Description": "Branch to check out from the source repository. 'main' is the stable branch; 'dev' tracks in-progress feature work and may be unstable.",
+        "Keywords": "git,branch,source,dev,main",
         "FieldName": "DownloadBranch",
         "InputType": "text",
         "IsFlagArgument": false,
         "ParamFieldName": "DownloadBranch",
         "IncludeInCommandLine": false,
         "DefaultValue": "main",
-        "EnumValues": {}
+        "EnumValues": {
+            "main": "main (stable)",
+            "dev": "dev (in-progress features, may be unstable)"
+        }
     },
     {
         "DisplayName": "Git Username (only if source repo is private)",
