@@ -1,0 +1,9 @@
+[
+    {
+        "Protocol": "TCP",
+        "Port": 8091,
+        "Ref": "WebPort",
+        "Name": "Web Server Port",
+        "Description": "Bot's internal HTTP server — Authentik OAuth callback and Icinga alert receiver"
+    }
+]

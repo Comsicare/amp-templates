@@ -202,7 +202,7 @@
         "DisplayName": "Web Server Port",
         "Category": "Gatekeeper",
         "Subcategory": "Modules",
-        "Description": "Port the bot's internal HTTP server listens on for OAuth callbacks (and, later, the Icinga alert receiver). Must be free on this AMP host and reachable at the Redirect URI above.",
+        "Description": "Port the bot's internal HTTP server listens on for OAuth callbacks and the Icinga alert receiver. Must be free on this AMP host and reachable at the Redirect URI above. The template opens TCP 8091 automatically (Network and Ports tab) — if you change this value, add the new port manually there too.",
         "Keywords": "web,port,http,callback",
         "FieldName": "web_port",
         "InputType": "text",
